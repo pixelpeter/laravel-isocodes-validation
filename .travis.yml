@@ -5,7 +5,7 @@ php:
 
 matrix:
   include:
-    - php: 8.8
+    - php: 8.0
       env: dependencies=lowest
     - php: 8.0
       env: dependencies=highest
