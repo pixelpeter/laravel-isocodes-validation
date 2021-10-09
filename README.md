@@ -1,11 +1,12 @@
 # Laravel 8+ IsoCodes Validation
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/pixelpeter/laravel-isocodes-validation.svg?style=flat-square&t=123)](https://packagist.org/packages/pixelpeter/laravel-isocodes-validation)
+[![Total Downloads](https://img.shields.io/packagist/dt/pixelpeter/laravel-isocodes-validation.svg?style=flat-square)](https://packagist.org/packages/pixelpeter/laravel-isocodes-validation)
 [![Software License](https://img.shields.io/badge/license-GPL-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Travis Build](https://img.shields.io/travis/pixelpeter/laravel-isocodes-validation/master.svg?style=flat-square)](https://api.travis-ci.com/pixelpeter/laravel-isocodes-validation)
-[![Scrutinizer Quality](https://img.shields.io/scrutinizer/g/pixelpeter/laravel-isocodes-validation.svg?style=flat-square)](https://scrutinizer-ci.com/g/pixelpeter/laravel-isocodes-validation)
-[![Scrutinizer Build](https://img.shields.io/scrutinizer/build/g/pixelpeter/laravel-isocodes-validation.svg?style=flat-square)](https://scrutinizer-ci.com/g/pixelpeter/laravel-isocodes-validation)
-[![Total Downloads](https://img.shields.io/packagist/dt/pixelpeter/laravel-isocodes-validation.svg?style=flat-square)](https://packagist.org/packages/pixelpeter/laravel-isocodes-validation)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/pixelpeter/laravel-isocodes-validation/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/pixelpeter/laravel-isocodes-validation/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/pixelpeter/laravel-isocodes-validation/badges/build.png?b=master)](https://scrutinizer-ci.com/g/pixelpeter/laravel-isocodes-validation/build-status/master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/pixelpeter/laravel-isocodes-validation/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 [![Coverage Status](https://coveralls.io/repos/github/pixelpeter/laravel-isocodes-validation/badge.svg?branch=master)](https://coveralls.io/github/pixelpeter/laravel-isocodes-validation?branch=master)
 
 A simple Laravel 8+ wrapper for the [IsoCodes Validation library](https://github.com/ronanguilloux/IsoCodes) from ronanguilloux.
