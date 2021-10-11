@@ -43,7 +43,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "pixelpeter\\IsoCodesValidation\\IsoCodesValidationServiceProvider"
+        "Pixelpeter\\IsoCodesValidation\\IsoCodesValidationServiceProvider"
       ]
     }
   }
