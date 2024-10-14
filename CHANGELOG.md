@@ -2,6 +2,14 @@
 
 All Notable changes for the Laravel 8+ IsoCodes Validation  will be documented in this file
 
+## v10.0.0 - 2024-10-14
+
+### What's Changed
+
+* UPDATE: add Laravel 11 compatibility by @pixelpeter in https://github.com/pixelpeter/laravel-isocodes-validation/pull/7
+
+**Full Changelog**: https://github.com/pixelpeter/laravel-isocodes-validation/compare/v8.1.0...v10.0.0
+
 ## v8.1.0 - 2024-10-14
 
 ### What's Changed
