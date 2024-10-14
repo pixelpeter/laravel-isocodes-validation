@@ -1,8 +1,12 @@
 <?php
 
-namespace Pixelpeter\IsoCodesValidation;
+namespace Pixelpeter\IsoCodesValidation\Tests;
 
-abstract class TestCase extends \Illuminate\Foundation\Testing\TestCase
+use Illuminate\Foundation\Console\Kernel;
+use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+use Pixelpeter\IsoCodesValidation\IsoCodesValidationServiceProvider;
+
+abstract class TestCase extends BaseTestCase
 {
     /**
      * The base URL to use while testing the application.
@@ -20,9 +24,9 @@ abstract class TestCase extends \Illuminate\Foundation\Testing\TestCase
     {
         $app = require __DIR__.'/../vendor/laravel/laravel/bootstrap/app.php';
 
-        $app->register(\Pixelpeter\IsoCodesValidation\IsoCodesValidationServiceProvider::class);
+        $app->register(IsoCodesValidationServiceProvider::class);
 
-        $app->make(\Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+        $app->make(Kernel::class)->bootstrap();
 
         return $app;
     }
