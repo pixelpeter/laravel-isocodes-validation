@@ -2,6 +2,18 @@
 
 All Notable changes for the Laravel 8+ IsoCodes Validation  will be documented in this file
 
+## v10.1.0 - 2024-10-14
+
+### What's Changed
+
+* Add Spanish translations by @elcapo in https://github.com/pixelpeter/laravel-isocodes-validation/pull/2
+
+### New Contributors
+
+* @elcapo made their first contribution in https://github.com/pixelpeter/laravel-isocodes-validation/pull/2
+
+**Full Changelog**: https://github.com/pixelpeter/laravel-isocodes-validation/compare/v10.0.0...v10.1.0
+
 ## v8.1.1 - 2024-10-14
 
 ### What's Changed
