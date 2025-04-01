@@ -2,7 +2,6 @@
 
 namespace Pixelpeter\IsoCodesValidation\Tests;
 
-use Illuminate\Foundation\Console\Kernel;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 use Pixelpeter\IsoCodesValidation\IsoCodesValidationServiceProvider;
 
