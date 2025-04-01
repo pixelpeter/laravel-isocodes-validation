@@ -3,7 +3,7 @@
 namespace Pixelpeter\IsoCodesValidation\Tests;
 
 use Illuminate\Foundation\Console\Kernel;
-use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+use Orchestra\Testbench\TestCase as BaseTestCase;
 use Pixelpeter\IsoCodesValidation\IsoCodesValidationServiceProvider;
 
 abstract class TestCase extends BaseTestCase
@@ -16,18 +16,15 @@ abstract class TestCase extends BaseTestCase
     protected $baseUrl = 'http://localhost';
 
     /**
-     * Creates the application.
+     * Get package providers.
      *
-     * @return \Illuminate\Foundation\Application
+     * @param  \Illuminate\Foundation\Application  $app
+     * @return array<int, class-string<\Illuminate\Support\ServiceProvider>>
      */
-    public function createApplication()
+    protected function getPackageProviders($app)
     {
-        $app = require __DIR__.'/../vendor/laravel/laravel/bootstrap/app.php';
-
-        $app->register(IsoCodesValidationServiceProvider::class);
-
-        $app->make(Kernel::class)->bootstrap();
-
-        return $app;
+        return [
+            IsoCodesValidationServiceProvider::class,
+        ];
     }
 }
