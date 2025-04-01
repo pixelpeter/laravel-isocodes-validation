@@ -2,6 +2,10 @@
 
 All Notable changes for the Laravel 8+ IsoCodes Validation  will be documented in this file
 
+## v12.0.0 - 2025-04-01
+
+ADD: Laravel 12 compatibility
+
 ## v10.1.0 - 2024-10-14
 
 ### What's Changed
