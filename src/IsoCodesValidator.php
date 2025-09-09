@@ -48,17 +48,15 @@ class IsoCodesValidator extends BaseValidator
         return $this->runIsoCodesValidator(\IsoCodes\CreditCard::class, $value);
     }
 
-    // /**
-    //  * Validate a EAN-8 code
-    //  *
-    //  * @param $attribute
-    //  * @param $value
-    //  * @return mixed
-    //  */
-    // public function validateEan8(/** @scrutinizer ignore-unused */ $attribute, $value)
-    // {
-    //     return $this->runIsoCodesValidator(\IsoCodes\Ean8::class, $value);
-    // }
+    /**
+     * Validate a EAN-8 code
+     *
+     * @return mixed
+     */
+    public function validateEan8(/** @scrutinizer ignore-unused */ $attribute, $value)
+    {
+        return $this->runIsoCodesValidator(\IsoCodes\Ean8::class, $value);
+    }
 
     /**
      * Validate a EAN-13 code
