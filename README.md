@@ -9,29 +9,15 @@
 [![PHPStan](https://github.com/pixelpeter/laravel-isocodes-validation/actions/workflows/phpstan.yml/badge.svg)](https://github.com/pixelpeter/laravel-isocodes-validation/actions/workflows/phpstan.yml)
 [![dependabot-auto-merge](https://github.com/pixelpeter/laravel-isocodes-validation/actions/workflows/dependabot-auto-merge.yml/badge.svg)](https://github.com/pixelpeter/laravel-isocodes-validation/actions/workflows/dependabot-auto-merge.yml)
 
-A simple Laravel 8+ wrapper for the [IsoCodes Validation library](https://github.com/ronanguilloux/IsoCodes) from
+A simple Laravel 10+ wrapper for the [IsoCodes Validation library](https://github.com/ronanguilloux/IsoCodes) from
 ronanguilloux.
 
 ## Installation
 
-### Step 1: Install Through Composer
+### Install With Composer
 
 ``` bash
 composer require pixelpeter/laravel-isocodes-validation
-```
-
-### Step 2: Add the Service Provider
-
-*(not needed starting with v2.x because of auto discovery)*
-
-Add the service provider in `app/config/app.php`
-
-```php
-'provider' => [
-    ...
-    Pixelpeter\IsoCodesValidation\IsoCodesValidationServiceProvider::class,
-    ...
-];
 ```
 
 ## Usage

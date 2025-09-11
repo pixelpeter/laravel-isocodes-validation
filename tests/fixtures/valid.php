@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     ['bban', '15459450000411700920U62'],
     ['bsn', '075278431'],
