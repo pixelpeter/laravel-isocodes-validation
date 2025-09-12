@@ -73,6 +73,6 @@ final class Registry
 
     public static function validatorClassForRule(string $rule): string
     {
-        return fluent(self::$validators)->get($rule, '');
+        return data_get(self::$validators, $rule, '');
     }
 }

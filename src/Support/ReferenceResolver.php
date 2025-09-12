@@ -18,7 +18,7 @@ final class ReferenceResolver
             $referenceField = $this->resolveWildcardPath($referenceField, $attribute);
         }
 
-        return fluent($data)->get($referenceField);
+        return data_get($data, $referenceField);
     }
 
     private function resolveWildcardPath(string $referenceField, string $attribute): string
