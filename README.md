@@ -1,4 +1,4 @@
-# Laravel 8+ IsoCodes Validation
+# Laravel 10+ IsoCodes Validation
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/pixelpeter/laravel-isocodes-validation.svg?style=flat-square&t=123)](https://packagist.org/packages/pixelpeter/laravel-isocodes-validation)
 [![Total Downloads](https://img.shields.io/packagist/dt/pixelpeter/laravel-isocodes-validation.svg?style=flat-square)](https://packagist.org/packages/pixelpeter/laravel-isocodes-validation)
