@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pixelpeter\IsoCodesValidation\Tests\Unit;
 
 use Illuminate\Support\Facades\Validator;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Pixelpeter\IsoCodesValidation\Tests\TestCase;
 
-class IsoCodesValidatorTest extends TestCase
+final class IsoCodesValidatorTest extends TestCase
 {
     /**
      * DataProvider for failing tests
@@ -120,5 +122,29 @@ class IsoCodesValidatorTest extends TestCase
         $this->assertTrue($validator->fails());
         $this->assertCount(2, $validator->errors()->all());
         $this->assertEquals($errors[0], $validator->errors()->first());
+    }
+
+    public function test_it_handles_fewer_wildcards_than_indices_in_reference(): void
+    {
+        $payload = [
+            'items' => [
+                [ // index 0
+                    'country_code' => 'DE',
+                    'locations' => [
+                        ['zip' => '12345'], // index 0
+                        ['zip' => '54321'], // index 1
+                    ],
+                ],
+            ],
+        ];
+
+        $rules = [
+            'items.0.locations.1.zip' => 'zipcode:items.*.country_code',
+        ];
+
+        $validator = Validator::make($payload, $rules);
+
+        $this->assertTrue($validator->passes());
+        $this->assertEmpty($validator->errors()->all());
     }
 }

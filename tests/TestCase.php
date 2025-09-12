@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pixelpeter\IsoCodesValidation\Tests;
 
 use Orchestra\Testbench\TestCase as BaseTestCase;

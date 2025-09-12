@@ -1,82 +1,50 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pixelpeter\IsoCodesValidation;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Str;
+use Pixelpeter\IsoCodesValidation\Support\ReferenceResolver;
+use Pixelpeter\IsoCodesValidation\Support\Registry;
+use Pixelpeter\IsoCodesValidation\Support\Replacer;
 
-class IsoCodesValidationServiceProvider extends ServiceProvider
+final class IsoCodesValidationServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap the application services.
-     *
-     * @return void
-     */
-    public function boot()
+    public function boot(): void
     {
-        // load translation files
         $this->loadTranslationsFrom(
             __DIR__.'/../lang',
             'validation'
         );
 
-        // registering intervention validator extension
-        $this->app['validator']->resolver(function ($translator, $data, $rules, $messages, $customAttributes) {
-            // set the validation error messages
-            foreach (get_class_methods('Pixelpeter\IsoCodesValidation\IsoCodesValidator') as $method) {
-                $key = $this->getTranslationKeyFromMethodName($method);
+        $validatorService = $this->app->make('validator');
 
-                $messages[$key] = $this->getErrorMessage($translator, $messages, $key);
-            }
+        foreach (Registry::ruleNames() as $rule) {
+            $validatorService->extend(
+                $rule,
+                function ($attribute, $value, $parameters, $validator) use ($rule): bool {
+                    $validatorClass = Registry::validatorClassForRule($rule);
+                    $referenceResolver = new ReferenceResolver;
+                    $isoCodesValdator = new IsoCodesValidator($attribute, $value, $parameters, $validator, $rule, $validatorClass, $referenceResolver);
 
-            return new IsoCodesValidator($translator, $data, $rules, $messages, $customAttributes);
-        });
+                    return $isoCodesValdator->validate();
+                },
+                $this->errorMessage($rule)
+            );
+
+            $validatorService->replacer($rule, function ($message, $attribute, $_, $parameters, $validator) {
+                $referenceResolver = new ReferenceResolver;
+                $replacer = new Replacer($attribute, $parameters, $validator, $referenceResolver);
+
+                return $replacer->replace($message);
+            });
+
+        }
     }
 
-    /**
-     * Return translation key for correspondent method name
-     *
-     * @param  string  $name
-     * @return string
-     */
-    private function getTranslationKeyFromMethodName($name)
+    protected function errorMessage(string $rulename): string
     {
-        if (stripos($name, 'validate') !== false) {
-            return Str::snake(substr($name, 8));
-        }
-
-        return '';
-    }
-
-    /**
-     * Return the matching error message for the key
-     *
-     * @param  string  $key
-     * @return string
-     */
-    private function getErrorMessage($translator, $messages, $key)
-    {
-        // return error messages passed directly to the validator
-        if (isset($messages[$key])) {
-            return $messages[$key];
-        }
-
-        // return error message from validation translation file
-        if ($translator->has("validation.{$key}")) {
-            return $translator->get("validation.{$key}");
-        }
-
-        // return packages default message
-        return $translator->get("validation::validation.{$key}");
-    }
-
-    /**
-     * Register the application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
+        return $this->app->make('translator')->get('validation::validation.'.$rulename);
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'bban' => 'The value ":value" of :attribute is not a valid BBAN code.',
     'bsn' => 'The value ":value" of :attribute is not a valid BSN.',
