@@ -1,4 +1,4 @@
-# Laravel 10+ IsoCodes Validation
+# Laravel 12+ IsoCodes Validation
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/pixelpeter/laravel-isocodes-validation.svg?style=flat-square&t=123)](https://packagist.org/packages/pixelpeter/laravel-isocodes-validation)
 [![Total Downloads](https://img.shields.io/packagist/dt/pixelpeter/laravel-isocodes-validation.svg?style=flat-square)](https://packagist.org/packages/pixelpeter/laravel-isocodes-validation)
@@ -9,8 +9,30 @@
 [![PHPStan](https://github.com/pixelpeter/laravel-isocodes-validation/actions/workflows/phpstan.yml/badge.svg)](https://github.com/pixelpeter/laravel-isocodes-validation/actions/workflows/phpstan.yml)
 [![dependabot-auto-merge](https://github.com/pixelpeter/laravel-isocodes-validation/actions/workflows/dependabot-auto-merge.yml/badge.svg)](https://github.com/pixelpeter/laravel-isocodes-validation/actions/workflows/dependabot-auto-merge.yml)
 
-A simple Laravel 10+ wrapper for the [IsoCodes Validation library](https://github.com/ronanguilloux/IsoCodes) from
+A simple Laravel 12+ wrapper for the [IsoCodes Validation library](https://github.com/ronanguilloux/IsoCodes) from
 ronanguilloux.
+
+## Version overview
+
+From `v13.0.0` on, the package major version matches the highest Laravel major version it supports, so `^13.0` covers
+Laravel 13.x and 12.x. This is the only maintained line: `master` is where it is developed, and the `v13.x` branch
+tracks it and carries the released state.
+
+| Laravel    | php           | composer | branch        |
+|------------|---------------|----------|---------------|
+| 13.x, 12.x | 8.5, 8.4, 8.3 | `^13.0`  | master, v13.x |
+
+### Deprecated releases
+
+Earlier releases stay installable and unchanged, but they are no longer maintained: they receive no fixes and no
+further releases. Laravel 11.x and 10.x are past their security support window, and Composer refuses to install them
+because of published security advisories.
+
+| Laravel          | php           | composer | tag     | status                            |
+|------------------|---------------|----------|---------|-----------------------------------|
+| 12.x, 11.x, 10.x | 8.4, 8.3, 8.2 | `^12.0`  | v12.1.0 | deprecated, superseded by `^13.0` |
+| 11.x, 10.x       | 8.3, 8.2, 8.1 | `^10.0`  | v10.1.0 | deprecated, no successor          |
+| 9.x, 8.x         | 8.2, 8.1, 8.0 | `^8.0`   | v8.1.1  | deprecated, no successor          |
 
 ## Installation
 
