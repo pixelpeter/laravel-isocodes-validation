@@ -14,8 +14,9 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
+          ref: master
           fetch-depth: 0
 
       - name: Update Changelog
@@ -24,17 +25,18 @@ jobs:
           latest-version: ${{ github.event.release.name }}
           release-notes: ${{ github.event.release.body }}
 
-      - name: Commit updated CHANGELOG
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          branch: changelog-update
-          commit_message: Update CHANGELOG
-          file_pattern: CHANGELOG.md
-
+      # Branch protection on master is enforced for non-admins, and the default
+      # GITHUB_TOKEN is not a repository admin, so it cannot push the entry
+      # straight to master. This action commits the change to its own branch and
+      # opens the pull request, which keeps the job free of a personal access
+      # token. It does the committing itself, so no separate commit step.
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v8
         with:
           branch: changelog-update
-          title: 'Update CHANGELOG'
-          body: 'Automated changelog update'
           base: master
+          add-paths: CHANGELOG.md
+          commit-message: Update CHANGELOG
+          title: 'Update CHANGELOG'
+          body: 'Automated changelog update for ${{ github.event.release.name }}.'
+          delete-branch: true

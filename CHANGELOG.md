@@ -1,12 +1,25 @@
 # Changelog
 
-All Notable changes for the Laravel 8+ IsoCodes Validation  will be documented in this file
+All notable changes for the Laravel 12+ IsoCodes Validation will be documented in this file.
+
+## v12.1.0 - 2025-09-12
+
+**Deprecated.** This release supports Laravel 12.x, 11.x and 10.x and is no longer maintained. The Laravel 12.x line
+continues in `v13.0.0`; there is no successor for Laravel 11.x and 10.x.
+
+- Refactored the validator for less boilerplate and a clearer structure, splitting the registry, the reference
+  resolver and the message replacer into `src/Support`.
 
 ## v12.0.0 - 2025-04-01
+
+**Deprecated.** This release supports Laravel 12.x, 11.x and 10.x and is no longer maintained.
 
 ADD: Laravel 12 compatibility
 
 ## v10.1.0 - 2024-10-14
+
+**Deprecated.** The v10.x line supports Laravel 10.x and 11.x and is no longer maintained. There is no successor
+release for those Laravel versions.
 
 ### What's Changed
 
@@ -19,6 +32,8 @@ ADD: Laravel 12 compatibility
 **Full Changelog**: https://github.com/pixelpeter/laravel-isocodes-validation/compare/v10.0.0...v10.1.0
 
 ## v8.1.1 - 2024-10-14
+
+**Deprecated.** The v8.x line supports Laravel 8.x and 9.x and is no longer maintained.
 
 ### What's Changed
 
